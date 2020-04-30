@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fictional_happiness/static/css/main.d1b05096.chunk.css",
+    "main.js": "/fictional_happiness/static/js/main.df12198d.chunk.js",
+    "main.js.map": "/fictional_happiness/static/js/main.df12198d.chunk.js.map",
+    "runtime-main.js": "/fictional_happiness/static/js/runtime-main.f959d808.js",
+    "runtime-main.js.map": "/fictional_happiness/static/js/runtime-main.f959d808.js.map",
+    "static/js/2.17724b57.chunk.js": "/fictional_happiness/static/js/2.17724b57.chunk.js",
+    "static/js/2.17724b57.chunk.js.map": "/fictional_happiness/static/js/2.17724b57.chunk.js.map",
+    "index.html": "/fictional_happiness/index.html",
+    "precache-manifest.541b600fcd74544f4c02c3c6b423a599.js": "/fictional_happiness/precache-manifest.541b600fcd74544f4c02c3c6b423a599.js",
+    "service-worker.js": "/fictional_happiness/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/fictional_happiness/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.17724b57.chunk.js.LICENSE.txt": "/fictional_happiness/static/js/2.17724b57.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/fictional_happiness/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f959d808.js",
+    "static/js/2.17724b57.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.df12198d.chunk.js"
+  ]
+}
