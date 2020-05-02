@@ -25,6 +25,7 @@ function Game() {
 
     return (
         <div className="content">
+             {/* STRETCH: make img names annonymous */}
              <img src={`${process.env.PUBLIC_URL}/imgs/${leftId}${leftChoice}.jpg`} width="300" alt={leftId} />
              {/* placeholders for actual functions High, Score, & Time */}
              <div className="center">
