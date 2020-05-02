@@ -1,20 +1,22 @@
 /*  src/Components/Title.css  */
 .background {
     width: 100%;
+    max-height: 75px;
+    top: 0;
+    padding: 1em;
+    position: absolute;
     background-color: rgb(192, 45, 26);
 }
 
 .Title {
-    box-sizing: border-box;
     display: flex;
+    margin-top: -0.5em;
     justify-content: center;
-    padding: 1em;
     color: #fff;
   }
 
 .Title-Subtitle {
-    margin-top: -2.5em;
-    padding: 1em;
+    margin-top: -0.5em;
     color: rgba(255, 255, 255, 0.75);
 }
 

@@ -28,9 +28,9 @@ import './Game.css'
 class Game extends Component {
     constructor(props) {
       super(props);
-      this.high = 0;
       this.state = { 
         count: 0, 
+        high: 0,
         redirect: false,
         leftId: 0,
         rightId: 0,
@@ -49,8 +49,8 @@ class Game extends Component {
         this.fakeOrReal();
     }
 
+    // ID (chooses random img based on ID)
     choice() {
-        // ID (chooses random img based on ID)
         this.setState({ leftId: Math.floor(Math.random() *10) });
         this.setState({ rightId: Math.floor(Math.random() *10) });
     }
@@ -70,18 +70,31 @@ class Game extends Component {
 
     // increases our players score
     increment() {
+        console.log("***");
+        console.log(this.state.count);
         this.setState({ count: this.state.count + 1 });
+        console.log(this.state.count);
+    }
+
+    // calculates our players high score
+    highScore() {
+        console.log("###")
+        console.log(this.state.count);
+        if (this.state.high <= this.state.count) {
+            this.setState({ high: this.state.count + 1 })
+        }
+        console.log(this.state.high);
     }
 
     // sets redirect to true
-    setRedirect = () => {
+    setRedirect() {
         this.setState({
           redirect: true
         })
       }
 
     // listens to see if redirect is true
-    renderRedirect = () => {
+    renderRedirect() {
         if (this.state.redirect) {
             return <Redirect to='/over' />
         }
@@ -89,21 +102,23 @@ class Game extends Component {
 
     // checks if click was the correct answer
     leftTrueOrFalse() {
+        
         if (this.state.leftChoice === 'real') {
+            // updates photos and incriments scores
             this.increment();
-            // attempt to update photos
+            this.highScore();
             this.setup();
         } else {
             //sends player to Game Over screen
-            console.log('redirect me!')
             this.setRedirect();
         }
     }
 
     rightTrueOrFalse() {
         if (this.state.rightChoice === 'real') {
+            // updates photos and incriments scores
             this.increment();
-            // attempt to update photos
+            this.highScore();
             this.setup();
         } else {
             //sends player to Game Over screen
@@ -127,7 +142,7 @@ class Game extends Component {
             {/* Center Content */}
             <div className="center">
                 <h2>High-Score:</h2>
-                <h3>{this.high}</h3>
+                <h3>{this.state.high}</h3>
                 <h2>Score:</h2>
                 <h3>{this.state.count}</h3>
                 {/* STRETCH: make a Time function
