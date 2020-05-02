@@ -95,6 +95,7 @@ class Game extends Component {
             this.setup();
         } else {
             //sends player to Game Over screen
+            console.log('redirect me!')
             this.setRedirect();
         }
     }
@@ -118,6 +119,7 @@ class Game extends Component {
             to avoid people finding the answers by
             using inspector */}
             {/* Left Side! */}
+            {this.renderRedirect()}
             <button onClick={this.leftTrueOrFalse.bind(this)}>
                 <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.leftId}${this.state.leftChoice}.jpg`} width="450px" alt={this.state.leftId} />
             </button>
@@ -135,6 +137,7 @@ class Game extends Component {
             </div>
 
             {/* Right Side! */}
+            {this.renderRedirect()}
             <button onClick={this.rightTrueOrFalse.bind(this)}>
                 <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.rightId}${this.state.rightChoice}.jpg`} width="450px" alt={this.state.rightId} />
             </button>
