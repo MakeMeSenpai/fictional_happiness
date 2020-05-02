@@ -7,17 +7,20 @@
 // that extends from compnonent. We try to define everything in
 // this.state formate, and use our setup function to define values
 // 3. choice and fakeOrReal methods are used to choose a random
-// photo for both left and right sides
+// photo for both left and right sides. Then return the saved highscore
+// from the cache
 // 4. we created an incrimentor method to increase the players
 // score
-// 5. we created some methods to create a redirect link in our 
+// 5. we created a highscore method in order to try and save the players
+// highscore in the local cache.
+// 6. we created some methods to create a redirect link in our 
 // buttons
-// 6. we check if the answer they choice was correct or not. If 
+// 7. we check if the answer they choice was correct or not. If 
 // correct, we increase their score with the beforementioned method.
 // Then we use our setup function to hopefully select new photo values.
 // if they are wrong, we should be given a error becuase the game
 // /over route does not exist yet.
-// 7. We render() our code into jsx, for the user to see.
+// 8. We render() our code into jsx, for the user to see.
 
 import { Redirect } from 'react-router-dom'
 
@@ -28,9 +31,10 @@ import './Game.css'
 class Game extends Component {
     constructor(props) {
       super(props);
+      this.saved = 0;
       this.state = { 
         count: 0, 
-        high: 0,
+        high: this.saved,
         redirect: false,
         leftId: 0,
         rightId: 0,
@@ -47,6 +51,10 @@ class Game extends Component {
     setup() {
         this.choice();
         this.fakeOrReal();
+        // retieves our local storage
+        console.log(this.saved)
+        this.saved = localStorage.getItem(this.saved);
+        this.setState({ high: localStorage.getItem(this.saved) });
     }
 
     // ID (chooses random img based on ID)
@@ -70,20 +78,18 @@ class Game extends Component {
 
     // increases our players score
     increment() {
-        console.log("***");
-        console.log(this.state.count);
         this.setState({ count: this.state.count + 1 });
-        console.log(this.state.count);
     }
 
     // calculates our players high score
     highScore() {
-        console.log("###")
-        console.log(this.state.count);
+        // checks if score is higher then highscore
         if (this.state.high <= this.state.count) {
-            this.setState({ high: this.state.count + 1 })
-        }
-        console.log(this.state.high);
+            // stores our score inside our local storage
+            window.localStorage.setItem(this.saved, this.state.count + 1);
+            // displays new High score
+            this.setState({ high: localStorage.getItem(this.saved) });
+        };
     }
 
     // sets redirect to true
@@ -136,7 +142,8 @@ class Game extends Component {
             {/* Left Side! */}
             {this.renderRedirect()}
             <button onClick={this.leftTrueOrFalse.bind(this)}>
-                <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.leftId}${this.state.leftChoice}.jpg`} width="450px" alt={this.state.leftId} />
+                <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.leftId}${this.state.leftChoice}.jpg`}
+                 width="450px" alt={this.state.leftId} />
             </button>
 
             {/* Center Content */}
@@ -154,7 +161,8 @@ class Game extends Component {
             {/* Right Side! */}
             {this.renderRedirect()}
             <button onClick={this.rightTrueOrFalse.bind(this)}>
-                <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.rightId}${this.state.rightChoice}.jpg`} width="450px" alt={this.state.rightId} />
+                <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.rightId}${this.state.rightChoice}.jpg`}
+                 width="450px" alt={this.state.rightId} />
             </button>
         </div>
         )
