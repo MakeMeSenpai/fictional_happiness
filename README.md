@@ -80,3 +80,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 * Make School Product College
 * Inspired by http://www.higherlowergame.com/ 
 * react to git pages using https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+* Thanks Annee for the redirect article https://medium.com/@anneeb/redirecting-in-react-4de5e517354a
