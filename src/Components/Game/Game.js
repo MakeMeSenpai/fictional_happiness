@@ -19,6 +19,10 @@
 // /over route does not exist yet.
 // 7. We render() our code into jsx, for the user to see.
 
+// # ERROR cannot define state for undefined line 94
+// shows us in console that it doesn't know what leftChoice is depite 
+// it being defined
+
 import { Redirect } from 'react-router-dom'
 
 import React, { Component } from 'react';
