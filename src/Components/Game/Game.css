@@ -9,4 +9,6 @@
 
 .center {
     width: 45%;
+    margin-top: -1em;
+    font-size: smaller;
 }

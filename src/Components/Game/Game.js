@@ -1,43 +1,61 @@
 // src/Components/Game/Game.js
 
-import React from 'react';
-// import High from '../High/High';
-// import Score from '../Score/Score';
+import React, { Component } from 'react';
 // import Time from '../Time/Time';
-import './Game.css';
+import './Game.css'
 
-function Game() {
-    // chooses a random image by id
-    let leftId = Math.floor(Math.random() *10)
-    let rightId = Math.floor(Math.random() * 10);
+class Game extends Component {
+    constructor(props) {
+      super(props);
 
-    // determines which image will be a fake or real smile
-    let fakeOrReal = Math.random();
-    let leftChoice = '';
-    let rightChoice = '';
-    if (fakeOrReal >= 0.5) {
-        leftChoice = 'real';
-        rightChoice = 'fake';
-    } else {
-        leftChoice = 'fake';
-        rightChoice = 'real';
+      // ID
+      this.leftId = Math.floor(Math.random() *10)
+      this.rightId = Math.floor(Math.random() * 10);
+
+      // Fake or Real
+      this.fakeOrReal = Math.random();
+      this.leftChoice = '';
+      this.rightChoice = '';
+
+      // Score
+      this.high = 0;
+      this.state = { count: 0 };
+      this.setup();
     };
 
-    return (
+    setup(){
+        if (this.fakeOrReal >= 0.5) {
+            this.leftChoice = 'real';
+            this.rightChoice = 'fake';
+        } else {
+            this.leftChoice = 'fake';
+            this.rightChoice = 'real';
+        };
+    }
+
+    increment() {
+        this.setState({ count: this.state.count + 1 });
+    }
+
+    render() {
+        return (
         <div className="content">
-             {/* STRETCH: make img names annonymous */}
-             <img src={`${process.env.PUBLIC_URL}/imgs/${leftId}${leftChoice}.jpg`} width="300" alt={leftId} />
-             {/* placeholders for actual functions High, Score, & Time */}
-             <div className="center">
-                 <div>High-Score: 10</div>
-                 <div>Score: 3</div>
-                 {/* should be optional whether it's a timer
-                 or a counter */}
-                 <div>Time: 5 sec.</div> 
-             </div>
-             <img src={`${process.env.PUBLIC_URL}/imgs/${rightId}${rightChoice}.jpg`} width="300" alt={rightId} />
+            {/* STRETCH: make img names annonymous */}
+            <img src={`${process.env.PUBLIC_URL}/imgs/${this.leftId}${this.leftChoice}.jpg`} width="450px" alt={this.leftId} />
+            <div className="center">
+                <h2>High-Score:</h2>
+                <h3>{this.high}</h3>
+                <h2>Score:</h2>
+                <h3>{this.state.count}</h3>
+                {/* STRETCH: make a Time function
+                should be optional whether it's a timer
+                or a counter */}
+                {/* <div>Time: 5 sec.</div>  */}
+            </div>
+            <img src={`${process.env.PUBLIC_URL}/imgs/${this.rightId}${this.rightChoice}.jpg`} width="450px" alt={this.rightId} />
         </div>
-    );
+        )
+    }
 }
 
 export default Game;
