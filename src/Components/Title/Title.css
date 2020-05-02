@@ -1,11 +1,11 @@
 /*  src/Components/Title.css  */
 .background {
+    width: 100%;
     background-color: rgb(192, 45, 26);
 }
 
 .Title {
     box-sizing: border-box;
-    width: 100%;
     display: flex;
     justify-content: center;
     padding: 1em;
