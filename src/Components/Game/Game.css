@@ -1,2 +1,12 @@
 /* src/Components/Game/Game.css */
 
+.content {
+    display: flex;
+    padding: 2em;
+    height: 45vmin;
+    color: black;
+}
+
+.center {
+    width: 45%;
+}
