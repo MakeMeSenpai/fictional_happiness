@@ -19,10 +19,6 @@
 // /over route does not exist yet.
 // 7. We render() our code into jsx, for the user to see.
 
-// # ERROR cannot define state for undefined line 94
-// shows us in console that it doesn't know what leftChoice is depite 
-// it being defined
-
 import { Redirect } from 'react-router-dom'
 
 import React, { Component } from 'react';
@@ -122,8 +118,8 @@ class Game extends Component {
             to avoid people finding the answers by
             using inspector */}
             {/* Left Side! */}
-            <button onClick={this.leftTrueOrFalse}>
-                <img src={`${process.env.PUBLIC_URL}/imgs/${this.leftId}${this.leftChoice}.jpg`} width="450px" alt={this.leftId} />
+            <button onClick={this.leftTrueOrFalse.bind(this)}>
+                <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.leftId}${this.state.leftChoice}.jpg`} width="450px" alt={this.state.leftId} />
             </button>
 
             {/* Center Content */}
@@ -139,8 +135,8 @@ class Game extends Component {
             </div>
 
             {/* Right Side! */}
-            <button onClick={this.rightTrueOrFalse}>
-                <img src={`${process.env.PUBLIC_URL}/imgs/${this.rightId}${this.rightChoice}.jpg`} width="450px" alt={this.rightId} />
+            <button onClick={this.rightTrueOrFalse.bind(this)}>
+                <img src={`${process.env.PUBLIC_URL}/imgs/${this.state.rightId}${this.state.rightChoice}.jpg`} width="450px" alt={this.state.rightId} />
             </button>
         </div>
         )
