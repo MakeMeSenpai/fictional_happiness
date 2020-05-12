@@ -56,6 +56,16 @@ class Game extends Component {
         this.saved = localStorage.getItem(this.saved);
         this.setState({ high: localStorage.getItem(this.saved) });
     }
+    // // retieves our local storage 
+    // const fromLocal = localStorage.getItem(GAME_STORE)
+    // let savedState
+    // if (savedState === null) { // We need this in case nothing was saved
+    //     savedState = { high: 0 }
+    // } else {
+    //     savedState = JSON.parse(fromLocal)
+    // }
+    // this.setState(savedState)
+    // }
 
     // ID (chooses random img based on ID)
     choice() {
@@ -91,6 +101,26 @@ class Game extends Component {
             this.setState({ high: localStorage.getItem(this.saved) });
         };
     }
+    // highScore() {
+    //   // checks if score is higher then highscore
+    //   if (this.state.high <= this.state.count) {
+    //     // stores our score inside our local storage
+    //     localStorage.setItem(GAME_STORE, this.state.count + 1);
+    //     // displays new High score
+    //     this.setState({ high: localStorage.getItem(this.saved) });
+    //   };
+    // }
+
+    // saveState() {
+    //     localStorage.setItem("SOME_KEY", JSON.stringify(this.state))
+    //   }
+    //   getState() {
+    //     let savedState = localStorage.getItem('SOME_KEY')
+    //     if (savedState === null) {
+    //       savedState = { high: 0 }
+    //     }
+    //     this.setState(savedState)
+    // }
 
     // sets redirect to true
     setRedirect() {
@@ -148,8 +178,8 @@ class Game extends Component {
 
             {/* Center Content */}
             <div className="center">
-                <h2>High-Score:</h2>
-                <h3>{this.state.high}</h3>
+                {/* <h2>High-Score:</h2>
+                <h3>{this.state.high}</h3> */}
                 <h2>Score:</h2>
                 <h3>{this.state.count}</h3>
                 {/* STRETCH: make a Time function
