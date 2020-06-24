@@ -26,7 +26,7 @@ import { Redirect } from 'react-router-dom'
 
 import React, { Component } from 'react';
 // import Time from '../Time/Time';
-import './Game.css'
+import './dist/Game.css'
 
 class Game extends Component {
     constructor(props) {

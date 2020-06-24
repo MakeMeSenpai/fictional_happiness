@@ -1,14 +1,14 @@
-/* src/Components/Game/Game.css */
+$block: 45vmin;
 
 .content {
     display: flex;
     padding: 2em;
-    height: 45vmin;
+    height: $block;
     color: black;
 }
 
 .center {
-    width: 45vmin;
+    width: $block;
     margin-top: -1em;
     font-size: smaller;
 }

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Home.css'
+import './dist/Home.css'
 
 function Home() {
     return (

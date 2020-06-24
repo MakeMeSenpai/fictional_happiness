@@ -1,7 +1,7 @@
 // src/Components/Over/Over.js
 
 import React from 'react';
-import './Over.css'
+import './dist/Over.css'
 
 function Over() {
     return (

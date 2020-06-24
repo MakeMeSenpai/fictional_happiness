@@ -1,9 +1,12 @@
-/* src/Componenets/Home/Home.css */
+$a: auto;
+$b: block;
+$fourty: 40vmin;
 
-.container{
-    display: block;
+
+.container {
+    display: $b;
     width: 75%;
-    margin: auto;
+    margin: $a;
     margin-top: 5.5em;
     color: black;
 }
@@ -13,17 +16,17 @@
 }
 
 .a {
-    display: block;
-    height: 40vmin;
-    width: 40vmin;
-    margin: auto;
+    display: $b;
+    height: $fourty;
+    width: $fourty;
+    margin: $a;
 }
 
 .logo {
     height: inherit;
     pointer-events: none;
 }
-  
+
 @media (prefers-reduced-motion: no-preference) {
     .logo {
         animation: logo-spin infinite 20s linear;
@@ -32,9 +35,10 @@
 
 @keyframes logo-spin {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }

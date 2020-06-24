@@ -1,34 +1,37 @@
-/*  src/Components/Title.css  */
+$five: 0.5em;
+$one: 1em;
+$white: #fff;
+
 .background {
     width: 100%;
     max-height: 75px;
     top: 0;
-    padding: 1em;
+    padding: $one;
     position: absolute;
     background-color: rgb(192, 45, 26);
 }
 
 .Title {
     display: flex;
-    margin-top: -0.5em;
+    margin-top: -$five;
     justify-content: center;
-    color: #fff;
-  }
+    color: $white;
+}
 
 .Title-Subtitle {
-    margin-top: -0.5em;
+    margin-top: -$five;
     color: rgba(255, 255, 255, 0.75);
 }
 
 .nav-link {
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: $five $one;
     color: rgba(255, 255, 255, 0.835);
     font-weight: bold;
     text-decoration: none;
 }
 
 .nav-link-active {
-    color: #fff;
+    color: $white;
     border-bottom: 2px solid;
-  }
+}

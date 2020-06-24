@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+  padding: 2em;
+  height: 45vmin;
+  color: black;
+}
+
+.center {
+  width: 45vmin;
+  margin-top: -1em;
+  font-size: smaller;
+}

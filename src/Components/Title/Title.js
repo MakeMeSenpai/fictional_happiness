@@ -1,7 +1,7 @@
 // src/Components/Title/Title.js
 
 import React from 'react';
-import './Title.css';
+import './dist/Title.css';
 
 function Title() {
     return (
