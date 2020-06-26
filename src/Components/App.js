@@ -7,7 +7,7 @@ import Home from './Home/Home';
 import Game from './Game/Game';
 import Over from './Over/Over';
 import Footer from './Footer/Footer';
-import './dist/App.css';
+import './App.css';
 
 function App() {
   return (

@@ -1,7 +1,16 @@
 $a: auto;
 $b: block;
 $fourty: 40vmin;
+$color: blue;
 
+p {
+    text-align: left;
+    color: $color;
+}
+
+h3 {
+    color: $color;
+}
 
 .container {
     display: $b;
